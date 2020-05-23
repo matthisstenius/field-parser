@@ -2,8 +2,8 @@ package fields_test
 
 import (
 	"errors"
+	"github.com/matthisstenius/field-parser"
 	"github.com/stretchr/testify/assert"
-	"lib/fields"
 	"testing"
 )
 
