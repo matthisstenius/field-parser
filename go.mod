@@ -1,4 +1,4 @@
-module lib/fields
+module field-parser
 
 go 1.13
 
