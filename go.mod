@@ -1,4 +1,4 @@
-module field-parser
+module github.com/matthisstenius/field-parser
 
 go 1.13
 
