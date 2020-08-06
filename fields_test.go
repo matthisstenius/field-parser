@@ -46,7 +46,7 @@ func TestFields_String(t *testing.T) {
 		{
 			name: "it should succeed",
 			key:  "key",
-			raw:  map[string]interface{}{"key": "value"},
+			raw:  map[string]interface{}{"key": map[string]interface{}{"stringValue": "value"}},
 			out:  "value",
 		},
 		{
@@ -56,7 +56,7 @@ func TestFields_String(t *testing.T) {
 		},
 		{
 			name:  "it should fail if value is not string",
-			raw:   map[string]interface{}{"key": 1},
+			raw:   map[string]interface{}{"key": map[string]interface{}{"stringValue": 1}},
 			error: errors.New("could not extract as string"),
 		},
 	}
@@ -91,7 +91,7 @@ func TestFields_Int64(t *testing.T) {
 		{
 			name: "it should succeed",
 			key:  "key",
-			raw:  map[string]interface{}{"key": int64(1)},
+			raw:  map[string]interface{}{"key": map[string]interface{}{"numberValue": int64(1)}},
 			out:  1,
 		},
 		{
@@ -101,7 +101,7 @@ func TestFields_Int64(t *testing.T) {
 		},
 		{
 			name:  "it should fail if value is not int",
-			raw:   map[string]interface{}{"key": "1"},
+			raw:   map[string]interface{}{"key": map[string]interface{}{"numberValue": "value"}},
 			error: errors.New("could not extract as int64"),
 		},
 	}
@@ -136,7 +136,7 @@ func TestFields_Bool(t *testing.T) {
 		{
 			name: "it should succeed",
 			key:  "key",
-			raw:  map[string]interface{}{"key": true},
+			raw:  map[string]interface{}{"key": map[string]interface{}{"booleanValue": true}},
 			out:  true,
 		},
 		{
@@ -146,7 +146,7 @@ func TestFields_Bool(t *testing.T) {
 		},
 		{
 			name:  "it should fail if value is not bool",
-			raw:   map[string]interface{}{"key": "1"},
+			raw:   map[string]interface{}{"key": map[string]interface{}{"booleanValue": "true"}},
 			error: errors.New("could not extract as bool"),
 		},
 	}

@@ -37,7 +37,7 @@ func (f *Fields) Int64(key string) (int64, error) {
 // Bool tries to extract given key as bool
 func (f *Fields) Bool(key string) (bool, error) {
 	if v, ok := f.raw[key].(map[string]interface{}); ok {
-		return v["boolenValue"].(bool), nil
+		return v["booleanValue"].(bool), nil
 	}
 	return false, errors.New("could not extract as bool")
 }
